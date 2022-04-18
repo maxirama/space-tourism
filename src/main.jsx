@@ -2,23 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import theme from './theme';
 import '@fontsource/bellefair';
 import '@fontsource/barlow-condensed';
 
-const theme = extendTheme({
-  colors: {
-    primary: '#0B0D17',
-    secondary: '#D0D6F9',
-    terciary: '#FFFFFF'
-  },
-  fonts: {
-    heading: 'Barlow Condensed, sans-serif'
-  }
-});
+const _theme = extendTheme(theme);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={_theme}>
       <App />
     </ChakraProvider>
   </React.StrictMode>

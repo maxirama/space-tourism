@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, Text, Image, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Text, useBreakpointValue, Center } from '@chakra-ui/react';
+import Background from '../../Components/Background';
 import data from '../../../data.json';
-import Navbar from '../../Components/Navbar';
 
 export const Home = () => {
   const images = {
@@ -18,21 +18,52 @@ export const Home = () => {
     lg: images.desktop
   });
 
-  console.log(image);
   return (
-    <>
+    <Box>
+      <Background url={image} />
+      <Box h='15vh' />
       <Box
-        bgImage={`url(${image})`}
-        bgSize={'cover'}
-        bgRepeat={'no-repeat'}
-        height='100vh'
-        width='100vw'
+        h='80vh'
+        p={3}
+        alignItems={'center'}
+        display='flex'
+        flexDirection={'column'}
       >
-        <Box bg={'rgb(0,0,0)'} opacity={'40%'} h='100vh' w='100vw'>
-          <Text>{data.destinations[0].name}</Text>
+        <Box textStyle='h5' color='secondary'>
+          SO, YOU WANT TO TRAVEL TO
+        </Box>
+        <Box textStyle='h1' color='white'>
+          SPACE
+        </Box>
+        <Box p={3} color='secondary'>
+          <Text fontWeight={'light'} textAlign={'center'} lineHeight={'3.5vh'}>
+            Let's face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we'll give you a trully out of this
+            world experience!
+          </Text>
+        </Box>
+        <Box
+          display='flex'
+          borderRadius={'90%'}
+          bg={'terciary'}
+          w='150px'
+          h='150px'
+          mt='auto'
+          p={3}
+        >
+          <Text
+            letterSpacing={'2px'}
+            fontSize='20px'
+            fontFamily='Bellefair'
+            alignSelf='center'
+            margin='0 auto'
+          >
+            EXPLORE
+          </Text>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

@@ -1,15 +1,27 @@
 import React from 'react';
-import Image from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
-const Background = ({ images }) => {
-
-
-
-  console.log(images);
+const Background = ({ url }) => {
   return (
-    <Image
-      src={{ base: images.mobile, md: images.tablet, lg: images.desktop }}
-    />
+    <>
+      <Box
+        h='100vh'
+        w='100vw'
+        position='absolute'
+        bgImage={url}
+        bgSize='cover'
+        zIndex={-999}
+      >
+        <Box
+          h='100vh'
+          w='100vw'
+          position='absolute'
+          bg={'black'}
+          opacity={'40%'}
+          zIndex={-998}
+        ></Box>
+      </Box>
+    </>
   );
 };
 
