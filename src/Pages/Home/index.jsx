@@ -28,15 +28,9 @@ export const Home = () => {
         height='100vh'
         width='100vw'
       >
-        <Text>{data.destinations[0].name}</Text>
-        {/* <Image
-        // src={{ base: images.mobile, md: images.tablet, lg: images.desktop }}
-        src={image}
-        height={'100vh'}
-        width={'100vw'}
-        position={'absolute'}
-        zIndex={-999}
-      /> */}
+        <Box bg={'rgb(0,0,0)'} opacity={'40%'} h='100vh' w='100vw'>
+          <Text>{data.destinations[0].name}</Text>
+        </Box>
       </Box>
     </>
   );
