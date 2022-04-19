@@ -32,6 +32,7 @@ export const Home = () => {
         <Box textStyle='h5' color='secondary'>
           SO, YOU WANT TO TRAVEL TO
         </Box>
+
         <Box textStyle='h1' color='white'>
           SPACE
         </Box>

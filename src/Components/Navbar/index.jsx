@@ -1,19 +1,6 @@
 import { React, useState } from 'react';
-import { Box, useBreakpointValue, Image, Button } from '@chakra-ui/react';
-import Icon from '../Icon';
-
-const Menu = () => {
-  return (
-    <Box
-      position='absolute'
-      filter='auto'
-      blur='5px'
-      bg='white'
-      w='60vw'
-      vh='100vh'
-    ></Box>
-  );
-};
+import { Box, useBreakpointValue, Image, Button, Text } from '@chakra-ui/react';
+import Menu from './Menu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,25 +12,38 @@ const Navbar = () => {
   // const mobileNavbar = useBreakpointValue({ base: true, md: false });
 
   return (
-    <Box
-      display='inline-flex'
-      justifyContent={'space-between'}
-      alignItems={'center'}
-      position='absolute'
-      mt={3}
-      width='100vw'
-    >
-      <Image p={3} ml={2} src='src\assets\shared\logo.svg' />
-      <Button
-        display={'flex-end'}
-        variant='ghost'
-        _hover='none'
-        _focus={'box-shadow: none, background-color: none'}
-        onClick={handleMenuClick}
+    <Box>
+      <Menu isOpen={isOpen} handleClick={handleMenuClick} />
+      <Box
+        display='inline-flex'
+        justifyContent={'space-between'}
+        alignItems={'center'}
+        position='absolute'
+        mt={3}
+        width='100vw'
       >
-        <Image p={2} src='src\assets\shared\icon-hamburger.svg' />
-      </Button>
-      {isOpen ? <Menu /> : null}
+        <Image p={3} ml={2} src='src/assets/shared/logo.svg' />
+        <Button
+          position='relative'
+          display={'flex-end'}
+          variant='ghost'
+          _hover='none'
+          _focus={'none'}
+          _active={'none'}
+          _focusVisible={'none'}
+          onClick={handleMenuClick}
+          zIndex={isOpen ? '999' : 0}
+        >
+          <Image
+            p={2}
+            src={
+              isOpen
+                ? 'src/assets/shared/icon-close.svg'
+                : 'src/assets/shared/icon-hamburger.svg'
+            }
+          />
+        </Button>
+      </Box>
     </Box>
   );
 };

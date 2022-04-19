@@ -36,10 +36,10 @@ export const theme = {
       fontFamily: 'Barlow Condensed',
       letterSpacing: '2.35px'
     },
-    navText: {
-      fontSize: ['16px'],
-      letterSpacing: '100px',
-      fontFamily: '2.7px'
+    navItem: {
+      fontSize: ['18px'],
+      letterSpacing: '2.7px',
+      fontFamily: 'Barlow Condensed'
     }
   }
 };
