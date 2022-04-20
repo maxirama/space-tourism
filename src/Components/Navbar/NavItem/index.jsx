@@ -7,14 +7,16 @@ const NavItem = ({ section, number }) => {
       display='inline-flex'
       flexDirection={'row'}
       width='100%'
-      pt={6}
+      pt={10}
       ml={10}
     >
       <Button
         justifyContent={'start'}
         width='100%'
         variant='ghost'
-        _hover='border-left:1px solid black'
+        _hover='none'
+        _focus={'none'}
+        _active={'none'}
         borderRadius={'0px'}
       >
         <Text pr={2} color='terciary' textStyle={'navItem'}>

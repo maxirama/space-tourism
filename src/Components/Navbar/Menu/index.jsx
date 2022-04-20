@@ -23,7 +23,7 @@ const Menu = ({ isOpen }) => {
           h='100%'
           width='60vw'
         >
-          <Box h='100%'>
+          <Box h='100%' pt={20}>
             {sections.map((section, index) => {
               return <NavItem section={section} number={index} />;
             })}
