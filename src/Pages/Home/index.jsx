@@ -4,7 +4,7 @@ import Background from '../../Components/Background';
 import data from '../../../data.json';
 
 export const Home = () => {
-  const images = {
+  const background = {
     mobile: 'src/assets/Images/Home/mobile.jpg',
     tablet: 'src/assets/Images/Home/background-home-tablet.jpg',
     desktop: 'src/assets/Images/Home/background-home-desktop.jpg'
@@ -12,15 +12,15 @@ export const Home = () => {
 
   const logoTest = 'src/assets/shared/logo.svg';
 
-  const image = useBreakpointValue({
-    base: images.mobile,
-    md: images.tablet,
-    lg: images.desktop
+  const _background = useBreakpointValue({
+    base: background.mobile,
+    md: background.tablet,
+    lg: background.desktop
   });
 
   return (
     <Box>
-      <Background url={image} />
+      <Background url={_background} opacity={true} />
       <Box h='15vh' />
       <Box
         h='80vh'

@@ -24,7 +24,7 @@ export const theme = {
     h5: {
       fontFamily: 'Barlow Condensed',
       fontWeight: 'normal',
-      fontSize: ['16px', '28px'],
+      fontSize: ['14px', '28px'],
       letterSpacing: '4.75px'
     },
     subHeading1: {
@@ -32,7 +32,7 @@ export const theme = {
       fontFamily: 'Barlow Condensed'
     },
     subHeading2: {
-      fontSize: ['14px'],
+      fontSize: ['16px'],
       fontFamily: 'Barlow Condensed',
       letterSpacing: '2.35px'
     },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react';
 
-const Background = ({ url }) => {
+const Background = ({ url, opacity }) => {
   return (
     <>
       <Box
@@ -12,14 +12,16 @@ const Background = ({ url }) => {
         bgSize='cover'
         zIndex={-999}
       >
-        <Box
-          h='100vh'
-          w='100vw'
-          position='absolute'
-          bg={'black'}
-          opacity={'40%'}
-          zIndex={-998}
-        ></Box>
+        {opacity ? (
+          <Box
+            h='100vh'
+            w='100vw'
+            position='absolute'
+            bg={'black'}
+            opacity={'40%'}
+            zIndex={-998}
+          />
+        ) : null}
       </Box>
     </>
   );
