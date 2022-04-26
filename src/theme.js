@@ -10,11 +10,11 @@ export const theme = {
       fontFamily: 'Bellefair, sans-serif'
     },
     h2: {
-      fontSize: ['100px'],
+      fontSize: ['56', '100px'],
       fontFamily: 'Bellefair, sans-serif'
     },
     h3: {
-      fontSize: ['56px'],
+      fontSize: ['48px', '56px'],
       fontFamily: 'Bellefair, sans-serif'
     },
     h4: {

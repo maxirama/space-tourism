@@ -5,24 +5,26 @@ import Planet from '../../Components/Planet';
 import data from '../../../data.json';
 
 const destinations = data.destinations;
-let planets = [];
 
-(function () {
-  destinations.forEach((destination) => {
-    planets = [...planets, destination.name.toUpperCase()];
-  });
-})();
-
-const DestinationItem = ({ planet, index }) => {
+const DestinationItem = ({ planet, index, handleClick }) => {
   return (
     <Button
       borderRadius={'0px'}
       key={index}
-      pb={1}
+      p={1}
+      pb={3}
       borderBottom={'3px solid white'}
       variant='ghost'
+      onClick={handleClick}
+      index={index}
+      value={index}
     >
-      <Text letterSpacing={2} textStyle={'h5'} color='secondary'>
+      <Text
+        letterSpacing={2}
+        fontWeight='light'
+        textStyle={'subHeading2'}
+        color='secondary'
+      >
         {planet}
       </Text>
     </Button>
@@ -32,14 +34,21 @@ const DestinationItem = ({ planet, index }) => {
 const DestinationsList = ({ planets, handleClick }) => {
   return (
     <Box
-      pt={3}
+      pt={5}
       gap={5}
       display='inline-flex'
       justifyContent={'center'}
+      alignContent='center'
       width='100vw'
     >
       {planets.map((planet, index) => {
-        return <DestinationItem planet={planet} index={index} />;
+        return (
+          <DestinationItem
+            planet={planet.name.toUpperCase()}
+            index={index}
+            handleClick={handleClick}
+          />
+        );
       })}
     </Box>
   );
@@ -47,6 +56,20 @@ const DestinationsList = ({ planets, handleClick }) => {
 
 const Destination = () => {
   const [currentPlanet, setCurrentPlanet] = useState(destinations[0]);
+  const [planets, setPlanets] = useState([]);
+
+  const handleClick = (e) => {
+    destinations[e.target.value]
+      ? setCurrentPlanet(destinations[e.target.value])
+      : null;
+  };
+
+  useEffect(() => {
+    destinations.forEach((destination) => {
+      console.log(destination);
+      setPlanets([...planets, destination.name.toUpperCase()]);
+    });
+  }, []);
 
   const background = {
     desktop: 'src/assets/destination/background-destination-desktop.jpg',
@@ -59,6 +82,10 @@ const Destination = () => {
     md: background.tablet,
     lg: background.desktop
   });
+
+  console.log(planets);
+  console.log(JSON.stringify(currentPlanet));
+  console.log(JSON.stringify(destinations));
 
   return (
     <>
@@ -88,10 +115,31 @@ const Destination = () => {
       <Box w='100vw' pt={10} display='flex' justifyContent={'center'}>
         <Planet url={destinations[0].images.png} />
       </Box>
-      <DestinationsList planets={planets} />
+      <DestinationsList planets={destinations} handleClick={handleClick} />
       <Box display='flex' w='100vw' justifyContent={'center'}>
-        <Text color='terciary' pt={3} textStyle={'h1'}>
+        <Text color='terciary' pt={3} textStyle={'h2'}>
           {currentPlanet.name.toLocaleUpperCase()}
+        </Text>
+      </Box>
+      <Box pr={6} pl={6}>
+        <Text textAlign={'center'} color='secondary' w='100w'>
+          {currentPlanet.description}
+        </Text>
+      </Box>
+      <Box pt={8}>
+        <Text textStyle={'subHeading2'} color='secondary' textAlign={'center'}>
+          AVG. DISTANCE
+        </Text>
+        <Text textStyle='h4' color='terciary' textAlign={'center'}>
+          {currentPlanet.distance.toLocaleUpperCase()}
+        </Text>
+      </Box>
+      <Box pt={8}>
+        <Text textStyle={'subHeading2'} color='secondary' textAlign={'center'}>
+          EST. TRAVEL TIME
+        </Text>
+        <Text textStyle='h4' color='terciary' textAlign={'center'}>
+          {currentPlanet.travel.toLocaleUpperCase()}
         </Text>
       </Box>
     </>
