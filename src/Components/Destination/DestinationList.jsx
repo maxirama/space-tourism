@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
-import DestinationItem from './DestinationItem';
-const DestinationsList = ({ planets, handleClick }) => {
+import { Box, Button, Text } from '@chakra-ui/react';
+
+const DestinationsList = ({ destinations, handleSelect }) => {
   return (
     <Box
       pt={5}
@@ -11,13 +11,31 @@ const DestinationsList = ({ planets, handleClick }) => {
       alignContent='center'
       width='100vw'
     >
-      {planets.map((planet, index) => {
+      {destinations?.map((destination, index) => {
+        console.log(destination);
         return (
-          <DestinationItem
-            planet={planet.name.toUpperCase()}
+          <Button
+            borderRadius={'0px'}
+            key={index}
+            p={1}
+            pb={3}
+            borderBottom={'3px solid white'}
+            variant='ghost'
+            onClick={() => {
+              handleSelect(destination);
+            }}
             index={index}
-            handleClick={handleClick}
-          />
+            value={index}
+          >
+            <Text
+              letterSpacing={2}
+              fontWeight='light'
+              textStyle={'subHeading2'}
+              color='secondary'
+            >
+              {destination.name.toUpperCase()}
+            </Text>
+          </Button>
         );
       })}
     </Box>

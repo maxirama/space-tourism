@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import { Box } from '@chakra-ui/react';
 
 const Background = ({ url, opacity }) => {

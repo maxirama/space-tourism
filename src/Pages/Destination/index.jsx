@@ -6,22 +6,18 @@ import Background from '../../Components/Background';
 import Planet from '../../Components/Planet';
 import data from '../../../data.json';
 
+function getDestinations() {
+  return Promise.resolve([...data.destinations]);
+}
+
 const Destination = () => {
-  const destinations = data.destinations;
-
-  const [currentPlanet, setCurrentPlanet] = useState(destinations[0]);
-  const [planets, setPlanets] = useState([]);
-
-  const handleClick = (e) => {
-    destinations[e.target.value]
-      ? setCurrentPlanet(destinations[e.target.value])
-      : console.log(currentPlanet);
-  };
+  const [currentPlanet, setCurrentPlanet] = useState();
+  const [destinations, setDestinations] = useState([]);
 
   useEffect(() => {
-    destinations.forEach((destination) => {
-      console.log(destination);
-      setPlanets([...planets, destination.name.toUpperCase()]);
+    getDestinations().then((destinations) => {
+      setDestinations(destinations);
+      setCurrentPlanet(destinations[0]);
     });
   }, []);
 
@@ -36,6 +32,10 @@ const Destination = () => {
     md: background.tablet,
     lg: background.desktop
   });
+
+  const handleSelect = (destination) => {
+    setCurrentPlanet(destination);
+  };
 
   return (
     <>
@@ -62,16 +62,23 @@ const Destination = () => {
           PICK YOUR DESTINATION{' '}
         </Text>
       </Box>
-      <Box w='100vw' pt={10} display='flex' justifyContent={'center'}>
-        <Planet url={currentPlanet.images.png} />
-      </Box>
-      <DestinationsList planets={destinations} handleClick={handleClick} />
-      <DestinationData
-        planetDescription={currentPlanet.description}
-        planetName={currentPlanet.name.toLocaleUpperCase()}
-        planetTravel={currentPlanet.travel.toLocaleUpperCase()}
-        planetDistance={currentPlanet.distance.toLocaleUpperCase()}
-      />
+      {currentPlanet && (
+        <>
+          <Box w='100vw' pt={10} display='flex' justifyContent={'center'}>
+            <Planet url={currentPlanet.images.png} />
+          </Box>
+          <DestinationsList
+            destinations={destinations}
+            handleSelect={handleSelect}
+          />
+          <DestinationData
+            planetDescription={currentPlanet.description}
+            planetName={currentPlanet.name.toLocaleUpperCase()}
+            planetTravel={currentPlanet.travel.toLocaleUpperCase()}
+            planetDistance={currentPlanet.distance.toLocaleUpperCase()}
+          />
+        </>
+      )}
     </>
   );
 };
