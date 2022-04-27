@@ -37,6 +37,7 @@ const Destination = () => {
     setCurrentPlanet(destination);
   };
 
+  console.log(` wtf ${JSON.stringify(currentPlanet)}`);
   return (
     <>
       <Background url={_background} opacity={false} />

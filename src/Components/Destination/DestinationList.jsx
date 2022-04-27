@@ -1,7 +1,15 @@
 import React from 'react';
 import { Box, Button, Text } from '@chakra-ui/react';
+import { useState } from 'react';
 
 const DestinationsList = ({ destinations, handleSelect }) => {
+  const [selected, setSelected] = useState(0);
+
+  function _handleSelect(destination, index) {
+    handleSelect(destination);
+    setSelected(index);
+  }
+
   return (
     <Box
       pt={5}
@@ -19,13 +27,14 @@ const DestinationsList = ({ destinations, handleSelect }) => {
             key={index}
             p={1}
             pb={3}
-            borderBottom={'3px solid white'}
             variant='ghost'
             onClick={() => {
-              handleSelect(destination);
+              _handleSelect(destination, index);
             }}
+            _hover='none'
             index={index}
             value={index}
+            borderBottom={index === selected ? `3px solid white` : null}
           >
             <Text
               letterSpacing={2}
