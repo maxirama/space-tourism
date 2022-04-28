@@ -3,7 +3,8 @@ import { Box, useBreakpointValue, Text, Button } from '@chakra-ui/react';
 import DestinationsList from '../../Components/Destination/DestinationList';
 import DestinationData from '../../Components/Destination/DestinationData';
 import Background from '../../Components/Background';
-import Planet from '../../Components/Planet';
+import SectionImage from '../../Components/SectionImage';
+import SectionTitle from '../../Components/SectionTitle';
 import data from '../../../data.json';
 
 function getDestinations() {
@@ -41,32 +42,16 @@ const Destination = () => {
   return (
     <>
       <Background url={_background} opacity={false} />
-      <Box
-        pt={20}
-        display='inline-flex'
-        alignItems={'center'}
-        justifyContent={'center'}
-        w='100vw'
-        h='10vh'
-        mt={6}
-      >
-        <Text
-          opacity='40%'
-          fontWeight='bold'
-          textStyle={'h5'}
-          pr={2}
-          color='secondary'
-        >
-          01
-        </Text>{' '}
-        <Text textStyle={'subHeading2'} color='terciary'>
-          PICK YOUR DESTINATION{' '}
-        </Text>
-      </Box>
+      <SectionTitle
+        sectionNumber={'01'}
+        title={'PICK YOUR DESTINATION'}
+        p={6}
+      />
+
       {currentPlanet && (
         <>
           <Box w='100vw' pt={10} display='flex' justifyContent={'center'}>
-            <Planet url={currentPlanet.images.png} />
+            <SectionImage url={currentPlanet.images.png} />
           </Box>
           <DestinationsList
             destinations={destinations}

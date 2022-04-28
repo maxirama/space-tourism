@@ -20,7 +20,6 @@ const DestinationsList = ({ destinations, handleSelect }) => {
       width='100vw'
     >
       {destinations?.map((destination, index) => {
-        console.log(destination);
         return (
           <Button
             borderRadius={'0px'}

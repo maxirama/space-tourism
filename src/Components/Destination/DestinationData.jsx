@@ -31,7 +31,7 @@ const DestinationData = ({
         <Text textStyle={'subHeading2'} color='secondary' textAlign={'center'}>
           EST. TRAVEL TIME
         </Text>
-        <Text textStyle='h4' color='terciary' textAlign={'center'}>
+        <Text textStyle='h4' color='terciary' textAlign={'center'} pb={7}>
           {planetTravel}
         </Text>
       </Box>

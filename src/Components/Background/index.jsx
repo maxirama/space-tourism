@@ -5,7 +5,7 @@ const Background = ({ url, opacity }) => {
   return (
     <Box
       h='100vh'
-      w='100vw'
+      w='100%'
       position='absolute'
       bgImage={url}
       bgSize='cover'
