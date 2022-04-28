@@ -10,7 +10,7 @@ const SectionTitle = ({ sectionNumber, title }) => {
         justifyContent={'center'}
         w='100vw'
         h='10vh'
-        mt={6}
+        mt={10}
       >
         <Text
           opacity='40%'

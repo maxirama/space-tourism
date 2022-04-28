@@ -51,7 +51,7 @@ const Destination = () => {
       {currentPlanet && (
         <>
           <Box w='100vw' pt={10} display='flex' justifyContent={'center'}>
-            <SectionImage url={currentPlanet.images.png} />
+            <SectionImage type='planet' url={currentPlanet.images.png} />
           </Box>
           <DestinationsList
             destinations={destinations}

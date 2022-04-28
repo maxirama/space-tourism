@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import { Box } from '@chakra-ui/react';
 
-const Background = ({ url, opacity }) => {
+const Background = ({ url, opacity, children }) => {
   return (
     <Box
       h='100vh'
@@ -22,6 +22,7 @@ const Background = ({ url, opacity }) => {
           zIndex={-998}
         />
       ) : null}
+      {children}
     </Box>
   );
 };
