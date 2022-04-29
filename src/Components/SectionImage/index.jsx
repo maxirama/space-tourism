@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from '@chakra-ui/react';
+import { Image, Box } from '@chakra-ui/react';
 
 const SectionImage = ({ url, type }) => {
   if (type === 'planet') {
@@ -9,7 +9,7 @@ const SectionImage = ({ url, type }) => {
     return <Image w={'250px'} h={'320px'} src={url} />;
   }
   if (type === 'full') {
-    return <Image src={url} />;
+    return <Image src={url} w='100vw' h='50vw' />;
   }
 };
 

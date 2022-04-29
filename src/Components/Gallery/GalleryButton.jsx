@@ -1,7 +1,14 @@
 import React from 'react';
 import { Box, Button, Text } from '@chakra-ui/react';
 
-const GalleryButton = ({ type, handleSelect, background, index }) => {
+const GalleryButton = ({
+  type,
+  handleSelect,
+  background,
+  index,
+  border,
+  color
+}) => {
   if (type === 'circle') {
     return (
       <Box
@@ -19,15 +26,22 @@ const GalleryButton = ({ type, handleSelect, background, index }) => {
   if (type === 'number') {
     return (
       <Box
-        width={'12px'}
-        h={'12px'}
+        display='flex'
+        width={'60px'}
+        justifyContent='center'
+        h={'60px'}
         background={background}
         borderRadius={'50%'}
         onClick={handleSelect}
         _hover='background-color: white'
         index={index}
+        p={1}
+        border={border}
+        color={color}
       >
-        <Text>{index}</Text>
+        <Text textStyle={'h4'} textAlign='center' alignSelf={'center'}>{`${
+          index + 1
+        }`}</Text>
       </Box>
     );
   }

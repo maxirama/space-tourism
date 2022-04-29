@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Background from '../../Components/Background';
-import { useBreakpointValue } from '@chakra-ui/react';
+import { useBreakpointValue, Text, Box } from '@chakra-ui/react';
 import getData from '../../Services';
 import SectionTitle from '../../Components/SectionTitle';
 import Gallery from '../../Components/Gallery';
 
 const Technology = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [technology, setTechnology] = useState({});
 
   const handleSelect = (technology) => {
@@ -33,16 +33,43 @@ const Technology = () => {
     lg: _background.desktop
   });
 
-  console.log(technology?.images?.portrait);
   return (
     <>
       <Background url={background} />
       <SectionTitle sectionNumber={'03'} title='SPACE LAUNCH 101' p={6} />
-      <Gallery
-        currentImage={technology?.images?.portrait}
-        handleSelect={handleSelect}
-        style='numberGallery'
-      />
+      {data && (
+        <>
+          <Gallery
+            currentImage={technology?.images?.landscape}
+            handleSelect={handleSelect}
+            data={data}
+            style='numberGallery'
+          />
+          <Box
+            display='flex'
+            width='100vw'
+            flexDirection={'column'}
+            justifyContent='center'
+            alignItems={'center'}
+          >
+            <Text textStyle={'h5'} color='secondary'>
+              THE TERMINOLOGY...
+            </Text>
+            <Text textStyle={'h3'} color='white' alignSelf={'center'}>
+              {technology?.name?.toLocaleUpperCase()}
+            </Text>
+            <Text
+              p={5}
+              color='secondary'
+              textAlign={'center'}
+              lineHeight={'30px'}
+            >
+              {' '}
+              {technology?.description}
+            </Text>
+          </Box>
+        </>
+      )}
     </>
   );
 };

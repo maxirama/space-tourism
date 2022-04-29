@@ -12,40 +12,46 @@ const Gallery = ({ style, data, handleSelect, currentImage }) => {
   }
 
   if (style === 'numberGallery') {
-    <>
-      <Box p={8} width='100%' display='flex' justifyContent={'center'}>
+    return (
+      <>
         <Box
-          width='100%'
-          borderBottom={'solid 1px lightgray'}
+          pt={6}
+          height='auto'
+          width='100vw'
           display='flex'
-          justifyContent='center'
+          justifyContent={'center'}
         >
-          {currentImage && <SectionImage url={currentImage} type='full' />}
+          <Box width='100vw' display='flex' justifyContent='center'>
+            {currentImage && <SectionImage url={currentImage} type='full' />}
+          </Box>
         </Box>
-      </Box>
-      <Box
-        display='inline-flex'
-        width='100%'
-        height='5vh'
-        justifyContent={'center'}
-        gap={5}
-      >
-        {data &&
-          data?.map((currentData, index) => {
-            console.log(currentData);
-            return (
-              <GalleryButton
-                background={selected === index ? 'white' : 'gray'}
-                handleSelect={() => {
-                  _handleSelect(currentData, index);
-                }}
-                index={index}
-                type='number'
-              />
-            );
-          })}
-      </Box>
-    </>;
+        <Box
+          display='inline-flex'
+          width='100%'
+          height='10vh'
+          mt={10}
+          justifyContent={'center'}
+          gap={5}
+        >
+          {data &&
+            data?.map((currentData, index) => {
+              console.log(currentData);
+              return (
+                <GalleryButton
+                  background={selected === index ? 'white' : 'none'}
+                  color={selected === index ? 'none' : 'white'}
+                  handleSelect={() => {
+                    _handleSelect(currentData, index);
+                  }}
+                  index={index}
+                  type='number'
+                  border='1px solid gray'
+                />
+              );
+            })}
+        </Box>
+      </>
+    );
   }
   if (style === 'buttonGallery') {
     return (
