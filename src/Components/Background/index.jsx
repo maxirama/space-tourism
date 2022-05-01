@@ -7,7 +7,7 @@ const Background = ({ url, opacity }) => {
       h='101vh'
       w='100%'
       position='absolute'
-      bgImage={url}
+      bgImage={url || 'black'}
       bgSize='cover'
       bgRepeat={'repeat-y'}
       zIndex={-999}

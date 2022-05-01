@@ -46,22 +46,31 @@ export const Home = () => {
         </Box>
         <Box
           display='flex'
+          justifyContent='flex-end'
           borderRadius={'90%'}
-          bg={'terciary'}
-          w='150px'
-          h='150px'
-          mt='auto'
-          p={3}
+          _hover={{
+            border: '55px solid rgba(300,300,300,0.2)'
+          }}
         >
-          <Text
-            letterSpacing={'2px'}
-            fontSize='20px'
-            fontFamily='Bellefair'
-            alignSelf='center'
-            margin='0 auto'
+          <Box
+            display='flex'
+            borderRadius={'90%'}
+            bg={'terciary'}
+            w='180px'
+            h='180px'
+            mt='auto'
+            p={3}
           >
-            EXPLORE
-          </Text>
+            <Text
+              letterSpacing={'2px'}
+              fontSize='20px'
+              fontFamily='Bellefair'
+              alignSelf='center'
+              margin='0 auto'
+            >
+              EXPLORE
+            </Text>
+          </Box>
         </Box>
       </Box>
     </Box>
