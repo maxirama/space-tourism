@@ -1,18 +1,19 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, useBreakpointValue } from '@chakra-ui/react';
 import NavItem from '../NavItem';
 
 const sections = ['HOME', 'DESTINATION', 'CREW', 'TECHNOLOGY'];
 
 const Menu = ({ isOpen }) => {
-  return isOpen ? (
+  const showMenu = useBreakpointValue({ base: isOpen, md: true });
+  return showMenu ? (
     <>
       <Box
+        display='flex'
         position='absolute'
         justifyContent='flex-end'
-        h='100vh'
+        h={{ base: '100vh', md: '15vh' }}
         w='100vw'
-        display='flex'
         zIndex='2'
         overflow={'hidden'}
       >
@@ -23,7 +24,13 @@ const Menu = ({ isOpen }) => {
           h='100%'
           width='60vw'
         >
-          <Box h='100%' pt={20}>
+          <Box
+            h='100%'
+            pt={{ base: 20, md: 5 }}
+            display={{ base: 'initial', md: 'inline-flex' }}
+            margin={{ base: 'initial', md: 'auto' }}
+            alignSelf={{ base: 'initial', md: 'center' }}
+          >
             {sections.map((section, index) => {
               return <NavItem section={section} number={index} />;
             })}

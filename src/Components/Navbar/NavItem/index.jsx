@@ -1,38 +1,47 @@
 import react from 'react';
-import { Text, Box, Button } from '@chakra-ui/react';
+import { Text, Box, Button, useBreakpointValue } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-const NavItem = ({ section, number }) => {
+const NavItem = ({ section, number, mobile }) => {
   let path = section === 'HOME' ? '/' : `/${section.toLowerCase()}`;
 
-  return (
-    <Link to={`${path}`}>
-      <Box
-        display='inline-flex'
-        flexDirection={'row'}
-        width='100%'
-        pt={10}
-        ml={10}
-      >
-        <Button
-          justifyContent={'start'}
+  const showNumber = useBreakpointValue({
+    base: false,
+    md: false
+  });
+
+  if (true) {
+    return (
+      <Link to={`${path}`}>
+        <Box
+          display='inline-flex'
+          flexDirection={'row'}
           width='100%'
-          variant='ghost'
-          _hover='none'
-          _focus={'none'}
-          _active={'none'}
-          borderRadius={'0px'}
+          pt={{ base: 10, md: 5 }}
+          ml={10}
         >
-          <Text pr={2} color='terciary' textStyle={'navItem'}>
-            {`0${number}`}
-          </Text>
-          <Text color='terciary' textStyle={'navItem'} fontWeight={'normal'}>
-            {section}
-          </Text>
-        </Button>
-      </Box>
-    </Link>
-  );
+          <Button
+            justifyContent={'start'}
+            width='100%'
+            variant='ghost'
+            _hover='none'
+            _focus={'none'}
+            _active={'none'}
+            borderRadius={'0px'}
+          >
+            {showNumber && (
+              <Text pr={2} color='terciary' textStyle={'navItem'}>
+                {`0${number}`}
+              </Text>
+            )}
+            <Text color='terciary' textStyle={'navItem'} fontWeight={'normal'}>
+              {section}
+            </Text>
+          </Button>
+        </Box>
+      </Link>
+    );
+  }
 };
 
 export default NavItem;
