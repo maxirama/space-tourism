@@ -6,7 +6,7 @@ const NavItem = ({ section, number, mobile }) => {
   let path = section === 'HOME' ? '/' : `/${section.toLowerCase()}`;
 
   const showNumber = useBreakpointValue({
-    base: false,
+    base: true,
     md: false
   });
 
@@ -18,7 +18,6 @@ const NavItem = ({ section, number, mobile }) => {
           flexDirection={'row'}
           width='100%'
           pt={{ base: 10, md: 5 }}
-          ml={10}
         >
           <Button
             justifyContent={'start'}

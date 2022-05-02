@@ -11,13 +11,13 @@ const Navbar = () => {
 
   const hamburgerMenu = useBreakpointValue({ base: true, md: false });
   return (
-    <Box>
+    <Box w='100vw'>
       <Menu isOpen={isOpen} handleClick={handleMenuClick} />
       <Box
         display='inline-flex'
         justifyContent={'space-between'}
         alignItems={'center'}
-        position='absolute'
+        position={{ base: 'absolute', md: 'absolute' }}
         mt={3}
         width='100vw'
       >

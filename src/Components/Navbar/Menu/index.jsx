@@ -10,9 +10,9 @@ const Menu = ({ isOpen }) => {
     <>
       <Box
         display='flex'
-        position='absolute'
+        position={{ base: 'absolute', md: 'absolute' }}
         justifyContent='flex-end'
-        h={{ base: '100vh', md: '15vh' }}
+        h={{ base: '100vh', md: '10vh' }}
         w='100vw'
         zIndex='2'
         overflow={'hidden'}
@@ -22,17 +22,21 @@ const Menu = ({ isOpen }) => {
           flexDirection={'row'}
           bg='rgb(100,100,100,0.4)'
           h='100%'
-          width='60vw'
+          width='auto'
         >
           <Box
-            h='100%'
-            pt={{ base: 20, md: 5 }}
             display={{ base: 'initial', md: 'inline-flex' }}
-            margin={{ base: 'initial', md: 'auto' }}
-            alignSelf={{ base: 'initial', md: 'center' }}
+            margin={{ base: 'initial' }}
+            justifyContent={'center'}
+            alignItems={{ base: 'initial', md: 'center' }}
+            pb={{ base: 0, md: 5 }}
+            p={6}
+            pt={0}
           >
             {sections.map((section, index) => {
-              return <NavItem section={section} number={index} />;
+              return (
+                <NavItem w='auto' h='100%' section={section} number={index} />
+              );
             })}
           </Box>
         </Box>

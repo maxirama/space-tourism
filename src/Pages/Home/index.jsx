@@ -21,9 +21,9 @@ export const Home = () => {
   return (
     <Box>
       <Background url={_background} opacity={true} />
-      <Box h='15vh' />
+      <Box h={{ base: '10vh', md: '15vh' }} />
       <Box
-        h='80vh'
+        h='90vh'
         p={3}
         alignItems={'center'}
         display='flex'
@@ -44,32 +44,35 @@ export const Home = () => {
             world experience!
           </Text>
         </Box>
-        <Box
-          display='flex'
-          justifyContent='flex-end'
-          borderRadius={'90%'}
-          _hover={{
-            border: '55px solid rgba(300,300,300,0.2)'
-          }}
-        >
+        <Box height='100%' display='flex' flexDirection={'column-reverse'}>
           <Box
-            display='flex'
-            borderRadius={'90%'}
-            bg={'terciary'}
-            w='180px'
-            h='180px'
-            mt='auto'
-            p={3}
+            justifySelf={'flex-end'}
+            borderRadius='50%'
+            border='55px solid transparent'
+            _hover={{
+              border: '55px solid rgba(300,300,300,0.2)'
+            }}
+            mb={6}
           >
-            <Text
-              letterSpacing={'2px'}
-              fontSize='20px'
-              fontFamily='Bellefair'
-              alignSelf='center'
-              margin='0 auto'
+            <Box
+              display='flex'
+              borderRadius={'90%'}
+              bg={'terciary'}
+              w='180px'
+              h='180px'
+              p={3}
+              alignItems='flex-end'
             >
-              EXPLORE
-            </Text>
+              <Text
+                letterSpacing={'2px'}
+                fontSize='20px'
+                fontFamily='Bellefair'
+                alignSelf='center'
+                margin='0 auto'
+              >
+                EXPLORE
+              </Text>
+            </Box>
           </Box>
         </Box>
       </Box>

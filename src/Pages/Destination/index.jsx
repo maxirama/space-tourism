@@ -42,11 +42,7 @@ const Destination = () => {
   return (
     <>
       <Background url={_background} opacity={false} />
-      <SectionTitle
-        sectionNumber={'01'}
-        title={'PICK YOUR DESTINATION'}
-        p={6}
-      />
+      <SectionTitle sectionNumber={'01'} title={'PICK YOUR DESTINATION'} />
 
       {currentPlanet && (
         <>

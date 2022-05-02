@@ -4,9 +4,9 @@ import { Box } from '@chakra-ui/react';
 const Background = ({ url, opacity }) => {
   return (
     <Box
-      h='101vh'
+      h='100%'
       w='100%'
-      position='absolute'
+      position='fixed'
       bgImage={url || 'black'}
       bgSize='cover'
       bgRepeat={'repeat-y'}
