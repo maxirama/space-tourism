@@ -59,7 +59,7 @@ const Gallery = ({ style, data, handleSelect, currentImage }) => {
         <Box p={8} width='100%' display='flex' justifyContent={'center'}>
           <Box
             width='100%'
-            borderBottom={'solid 1px lightgray'}
+            borderBottom={'solid 1px rgba(192, 192, 192, .3)'}
             display='flex'
             justifyContent='center'
           >

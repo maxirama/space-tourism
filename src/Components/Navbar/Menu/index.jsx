@@ -10,7 +10,7 @@ const Menu = ({ isOpen }) => {
     <>
       <Box
         display='flex'
-        position={{ base: 'absolute', md: 'absolute' }}
+        position={{ base: 'fixed', md: 'absolute' }}
         justifyContent='flex-end'
         h={{ base: '100vh', md: '10vh' }}
         w='100vw'
@@ -22,7 +22,7 @@ const Menu = ({ isOpen }) => {
           flexDirection={'row'}
           bg='rgb(100,100,100,0.4)'
           h='100%'
-          width='auto'
+          width='60%'
         >
           <Box
             display={{ base: 'initial', md: 'inline-flex' }}
@@ -31,7 +31,7 @@ const Menu = ({ isOpen }) => {
             alignItems={{ base: 'initial', md: 'center' }}
             pb={{ base: 0, md: 5 }}
             p={6}
-            pt={0}
+            pt={20}
           >
             {sections.map((section, index) => {
               return (

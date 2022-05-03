@@ -4,6 +4,7 @@ import { useBreakpointValue, Text, Box } from '@chakra-ui/react';
 import getData from '../../Services';
 import SectionTitle from '../../Components/SectionTitle';
 import Gallery from '../../Components/Gallery';
+import End from '../../Components/End';
 
 const Technology = () => {
   const [data, setData] = useState([]);
@@ -36,7 +37,7 @@ const Technology = () => {
   return (
     <>
       <Background url={background} />
-      <SectionTitle sectionNumber={'03'} title='SPACE LAUNCH 101' p={6} />
+      <SectionTitle sectionNumber={'03'} title='SPACE LAUNCH 101' pt={10} />
       {data && (
         <>
           <Gallery
@@ -70,6 +71,7 @@ const Technology = () => {
           </Box>
         </>
       )}
+      <End />
     </>
   );
 };

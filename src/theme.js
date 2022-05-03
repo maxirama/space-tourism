@@ -6,11 +6,11 @@ export const theme = {
   },
   textStyles: {
     h1: {
-      fontSize: ['75px', '150px'],
+      fontSize: ['100px', '150px'],
       fontFamily: 'Bellefair, sans-serif'
     },
     h2: {
-      fontSize: ['36px', '56px', '100px'],
+      fontSize: ['56px', '56px', '100px'],
       fontFamily: 'Bellefair, sans-serif'
     },
     h3: {
@@ -24,7 +24,7 @@ export const theme = {
     h5: {
       fontFamily: 'Barlow Condensed',
       fontWeight: 'normal',
-      fontSize: ['14px', '28px'],
+      fontSize: ['18px', '28px'],
       letterSpacing: '4.75px'
     },
     subHeading1: {

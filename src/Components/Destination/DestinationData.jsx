@@ -15,15 +15,26 @@ const DestinationData = ({
         </Text>
       </Box>
       <Box pr={6} pl={6}>
-        <Text textAlign={'center'} color='secondary' w='100w'>
+        <Text
+          textAlign={'center'}
+          color='secondary'
+          w='100w'
+          pb={6}
+          borderBottom='1px solid rgba(192, 192, 192, 0.3)'
+        >
           {planetDescription}
         </Text>
       </Box>
-      <Box pt={8}>
-        <Text textStyle={'subHeading2'} color='secondary' textAlign={'center'}>
+      <Box>
+        <Text
+          pt={6}
+          textStyle={'subHeading2'}
+          color='secondary'
+          textAlign={'center'}
+        >
           AVG. DISTANCE
         </Text>
-        <Text textStyle='h4' color='terciary' textAlign={'center'}>
+        <Text textStyle='h3' color='terciary' textAlign={'center'}>
           {planetDistance}
         </Text>
       </Box>
@@ -31,7 +42,7 @@ const DestinationData = ({
         <Text textStyle={'subHeading2'} color='secondary' textAlign={'center'}>
           EST. TRAVEL TIME
         </Text>
-        <Text textStyle='h4' color='terciary' textAlign={'center'} pb={7}>
+        <Text textStyle='h3' color='terciary' textAlign={'center'} pb={7}>
           {planetTravel}
         </Text>
       </Box>

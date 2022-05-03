@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Text, useBreakpointValue, Center } from '@chakra-ui/react';
 import Background from '../../Components/Background';
+import SectionTitle from '../../Components/SectionTitle';
+import Description from '../../Components/Description';
 import data from '../../../data.json';
 
 export const Home = () => {
@@ -10,7 +12,10 @@ export const Home = () => {
     desktop: 'src/assets/Images/Home/background-home-desktop.jpg'
   };
 
-  const logoTest = 'src/assets/shared/logo.svg';
+  const homeDescription = `Let's face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we'll give you a trully out of this
+            world experience!`;
 
   const _background = useBreakpointValue({
     base: background.mobile,
@@ -24,25 +29,28 @@ export const Home = () => {
       <Box h={{ base: '10vh', md: '15vh' }} />
       <Box
         h='90vh'
-        p={3}
+        p={4}
         alignItems={'center'}
         display='flex'
         flexDirection={'column'}
       >
-        <Box textStyle='h5' color='secondary'>
-          SO, YOU WANT TO TRAVEL TO
-        </Box>
+        <SectionTitle
+          textStyle='h5'
+          fontSize={'22px'}
+          title='SO, YOU WANT TO TRAVEL TO'
+          color='secondary'
+        />
 
         <Box textStyle='h1' color='white'>
           SPACE
         </Box>
-        <Box p={3} color='secondary'>
-          <Text fontWeight={'light'} textAlign={'center'} lineHeight={'3.5vh'}>
-            Let's face it; if you want to go to space, you might as well
-            genuinely go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relax because we'll give you a trully out of this
-            world experience!
-          </Text>
+        <Box w={{ base: '327px', md: '450px' }} color='secondary'>
+          <Description
+            fontWeight='light'
+            textAlign={'center'}
+            lineHeight={'30px'}
+            description={homeDescription}
+          />
         </Box>
         <Box height='100%' display='flex' flexDirection={'column-reverse'}>
           <Box
@@ -58,8 +66,8 @@ export const Home = () => {
               display='flex'
               borderRadius={'90%'}
               bg={'terciary'}
-              w='180px'
-              h='180px'
+              w={{ base: '150px', md: '242px' }}
+              h={{ base: '150px', md: '242px' }}
               p={3}
               alignItems='flex-end'
             >

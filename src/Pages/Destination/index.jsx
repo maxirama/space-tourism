@@ -6,6 +6,7 @@ import Background from '../../Components/Background';
 import SectionImage from '../../Components/SectionImage';
 import SectionTitle from '../../Components/SectionTitle';
 import data from '../../../data.json';
+import End from '../../Components/End';
 
 function getDestinations() {
   return Promise.resolve([...data.destinations]);
@@ -42,11 +43,15 @@ const Destination = () => {
   return (
     <>
       <Background url={_background} opacity={false} />
-      <SectionTitle sectionNumber={'01'} title={'PICK YOUR DESTINATION'} />
+      <SectionTitle
+        sectionNumber={'01'}
+        title={'PICK YOUR DESTINATION'}
+        pt={10}
+      />
 
       {currentPlanet && (
         <>
-          <Box w='100vw' pt={10} display='flex' justifyContent={'center'}>
+          <Box w='100vw' pt={5} display='flex' justifyContent={'center'}>
             <SectionImage type='planet' url={currentPlanet.images.png} />
           </Box>
           <DestinationsList
@@ -61,6 +66,7 @@ const Destination = () => {
           />
         </>
       )}
+      <End />
     </>
   );
 };

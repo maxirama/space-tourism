@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Box } from '@chakra-ui/react';
 
-const SectionTitle = ({ sectionNumber, title }) => {
+const SectionTitle = ({ sectionNumber, title, color, fontSize, pt }) => {
   return (
     <>
       <Box
@@ -11,18 +11,22 @@ const SectionTitle = ({ sectionNumber, title }) => {
         w='100vw'
         h='10vh'
         mt={{ base: 10 }}
-        pt={{ base: 0, md: 20 }}
+        pt={pt || null}
+        gap={2}
       >
         <Text
           opacity='40%'
           fontWeight='bold'
           textStyle={'h5'}
-          pr={2}
           color='secondary'
         >
           {sectionNumber}
         </Text>
-        <Text textStyle={'subHeading2'} color='terciary'>
+        <Text
+          fontSize={fontSize || 'inherit'}
+          textStyle={'subHeading2'}
+          color={color || 'terciary'}
+        >
           {title}
         </Text>
       </Box>

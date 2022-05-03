@@ -4,6 +4,7 @@ import { Box, Text, useBreakpointValue } from '@chakra-ui/react';
 import SectionTitle from '../../Components/SectionTitle';
 import data from '../../../data.json';
 import Gallery from '../../Components/Gallery';
+import { Button } from '@chakra-ui/react';
 
 function getCrew() {
   return Promise.resolve([...data.crew]);
@@ -71,6 +72,7 @@ const Crew = () => {
           {crewMember?.bio}
         </Text>
       </Box>
+      <Box h='10vh' />
     </>
   );
 };
