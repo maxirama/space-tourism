@@ -53,7 +53,7 @@ const Technology = () => {
             justifyContent='center'
             alignItems={'center'}
           >
-            <Text textStyle={'h5'} color='secondary'>
+            <Text textStyle={'h5'} pt={3} color='secondary'>
               THE TERMINOLOGY...
             </Text>
             <Text textStyle={'h3'} color='white' alignSelf={'center'}>

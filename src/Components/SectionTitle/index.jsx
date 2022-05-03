@@ -7,10 +7,11 @@ const SectionTitle = ({ sectionNumber, title, color, fontSize, pt }) => {
       <Box
         display='inline-flex'
         alignItems={'center'}
-        justifyContent={'center'}
+        justifyContent={{ base: 'center', md: 'flex-start' }}
         w='100vw'
         h='10vh'
-        mt={{ base: 10 }}
+        ml={{ base: 'none', md: 10 }}
+        mt={{ base: 10, md: 20 }}
         pt={pt || null}
         gap={2}
       >

@@ -46,7 +46,7 @@ const Destination = () => {
       <SectionTitle
         sectionNumber={'01'}
         title={'PICK YOUR DESTINATION'}
-        pt={10}
+        pt={{ base: 10, md: 20 }}
       />
 
       {currentPlanet && (

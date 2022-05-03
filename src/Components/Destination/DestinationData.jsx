@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
+import Description from '../Description';
 
 const DestinationData = ({
   planetName,
@@ -14,8 +15,14 @@ const DestinationData = ({
           {planetName}
         </Text>
       </Box>
-      <Box pr={6} pl={6}>
-        <Text
+      <Box display='flex' w='100%' justifyContent={'center'}>
+        <Box
+          w='80%'
+          borderBottom='1px solid rgba(192, 192, 192, 0.3)'
+          color='secondary'
+        >
+          <Description textAlign={'center'} description={planetDescription} />
+          {/* <Text
           textAlign={'center'}
           color='secondary'
           w='100w'
@@ -23,28 +30,39 @@ const DestinationData = ({
           borderBottom='1px solid rgba(192, 192, 192, 0.3)'
         >
           {planetDescription}
-        </Text>
+        </Text> */}
+        </Box>
       </Box>
-      <Box>
-        <Text
-          pt={6}
-          textStyle={'subHeading2'}
-          color='secondary'
-          textAlign={'center'}
-        >
-          AVG. DISTANCE
-        </Text>
-        <Text textStyle='h3' color='terciary' textAlign={'center'}>
-          {planetDistance}
-        </Text>
-      </Box>
-      <Box pt={8}>
-        <Text textStyle={'subHeading2'} color='secondary' textAlign={'center'}>
-          EST. TRAVEL TIME
-        </Text>
-        <Text textStyle='h3' color='terciary' textAlign={'center'} pb={7}>
-          {planetTravel}
-        </Text>
+      <Box
+        display={{ base: 'initial', md: 'inline-flex' }}
+        gap={{ base: 0, md: 20 }}
+        width='100%'
+        justifyContent={'center'}
+      >
+        <Box pt={8}>
+          <Text
+            textStyle={'subHeading2'}
+            color='secondary'
+            textAlign={'center'}
+          >
+            AVG. DISTANCE
+          </Text>
+          <Text textStyle='h4' color='terciary' textAlign={'center'}>
+            {planetDistance}
+          </Text>
+        </Box>
+        <Box pt={8}>
+          <Text
+            textStyle={'subHeading2'}
+            color='secondary'
+            textAlign={'center'}
+          >
+            EST. TRAVEL TIME
+          </Text>
+          <Text textStyle='h4' color='terciary' textAlign={'center'} pb={7}>
+            {planetTravel}
+          </Text>
+        </Box>
       </Box>
     </>
   );
