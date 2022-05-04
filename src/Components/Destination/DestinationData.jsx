@@ -20,17 +20,10 @@ const DestinationData = ({
           w='80%'
           borderBottom='1px solid rgba(192, 192, 192, 0.3)'
           color='secondary'
+          pb={5}
         >
           <Description textAlign={'center'} description={planetDescription} />
-          {/* <Text
-          textAlign={'center'}
-          color='secondary'
-          w='100w'
-          pb={6}
-          borderBottom='1px solid rgba(192, 192, 192, 0.3)'
-        >
-          {planetDescription}
-        </Text> */}
+
         </Box>
       </Box>
       <Box
