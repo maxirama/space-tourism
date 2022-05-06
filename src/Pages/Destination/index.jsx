@@ -39,33 +39,34 @@ const Destination = () => {
     setCurrentPlanet(destination);
   };
 
-  console.log(` wtf ${JSON.stringify(currentPlanet)}`);
   return (
     <>
-      <Background url={_background} opacity={false} />
-      <SectionTitle
-        sectionNumber={'01'}
-        title={'PICK YOUR DESTINATION'}
-        pt={{ base: 10, md: 20 }}
-      />
+      <Box overflowX='hidden'>
+        <Background url={_background} opacity={false} />
+        <SectionTitle
+          sectionNumber={'01'}
+          title={'PICK YOUR DESTINATION'}
+          pt={{ base: 10, md: 20 }}
+        />
 
-      {currentPlanet && (
-        <>
-          <Box w='100vw' pt={5} display='flex' justifyContent={'center'}>
-            <SectionImage type='planet' url={currentPlanet.images.png} />
-          </Box>
-          <DestinationsList
-            destinations={destinations}
-            handleSelect={handleSelect}
-          />
-          <DestinationData
-            planetDescription={currentPlanet.description}
-            planetName={currentPlanet.name.toLocaleUpperCase()}
-            planetTravel={currentPlanet.travel.toLocaleUpperCase()}
-            planetDistance={currentPlanet.distance.toLocaleUpperCase()}
-          />
-        </>
-      )}
+        {currentPlanet && (
+          <>
+            <Box w='100vw' pt={5} display='flex' justifyContent={'center'}>
+              <SectionImage type='planet' url={currentPlanet.images.png} />
+            </Box>
+            <DestinationsList
+              destinations={destinations}
+              handleSelect={handleSelect}
+            />
+            <DestinationData
+              planetDescription={currentPlanet.description}
+              planetName={currentPlanet.name.toLocaleUpperCase()}
+              planetTravel={currentPlanet.travel.toLocaleUpperCase()}
+              planetDistance={currentPlanet.distance.toLocaleUpperCase()}
+            />
+          </>
+        )}
+      </Box>
       <End />
     </>
   );

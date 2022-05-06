@@ -1,17 +1,17 @@
 import React from 'react';
 import { Text, Box } from '@chakra-ui/react';
 
-const SectionTitle = ({ sectionNumber, title, color, fontSize, pt }) => {
+const SectionTitle = ({ sectionNumber, title, color, fontSize, pt, home }) => {
   return (
     <>
       <Box
         display='inline-flex'
         alignItems={'center'}
-        justifyContent={{ base: 'center', md: 'flex-start' }}
+        justifyContent={{ base: 'center', md: home ? 'center' : 'flex-start' }}
         w='100vw'
         h='10vh'
-        ml={{ base: 'none', md: 10 }}
-        mt={{ base: 10, md: 20 }}
+        ml={{ base: 'none', md: home ? 0 : 10 }}
+        mt={{ base: 10, md: home ? 0 : 20 }}
         pt={pt || null}
         gap={2}
       >
@@ -23,11 +23,7 @@ const SectionTitle = ({ sectionNumber, title, color, fontSize, pt }) => {
         >
           {sectionNumber}
         </Text>
-        <Text
-          fontSize={fontSize || 'inherit'}
-          textStyle={'subHeading2'}
-          color={color || 'terciary'}
-        >
+        <Text textStyle={'subHeading2'} color={color || 'terciary'}>
           {title}
         </Text>
       </Box>

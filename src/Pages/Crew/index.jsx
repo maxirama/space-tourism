@@ -5,6 +5,7 @@ import SectionTitle from '../../Components/SectionTitle';
 import data from '../../../data.json';
 import Gallery from '../../Components/Gallery';
 import { Button } from '@chakra-ui/react';
+import Description from '../../Components/Description';
 
 function getCrew() {
   return Promise.resolve([...data.crew]);
@@ -24,6 +25,11 @@ const Crew = () => {
     setCrewMember(crewMember);
   };
 
+  const _displayEnd = {
+    mobile: true,
+    tablet: false
+  };
+
   const _background = {
     desktop: 'src/assets/crew/background-crew-desktop.jpg',
     tablet: 'src/assets/crew/background-crew-tablet.jpg',
@@ -36,44 +42,47 @@ const Crew = () => {
     lg: _background.desktop
   });
 
+  const displayEnd = useBreakpointValue({
+    base: _displayEnd.mobile,
+    md: _displayEnd.tablet
+  });
+
   return (
-    <>
-      <Background url={background} />;
-      <SectionTitle sectionNumber={'02'} title='MEET YOUR CREW' />
-      {crewMember && (
-        <Gallery
-          data={data}
-          handleSelect={handleSelect}
-          currentImage={crewMember?.images?.png}
-          style={'buttonGallery'}
-        />
-      )}
-      <Box
-        width='100vw'
-        display='flex'
-        flexDirection='column'
-        justifyContent={'flex-end'}
-        alignItems={'center'}
-      >
-        <Text textStyle={'h4'} color='lightgray' opacity='80%'>
-          {crewMember?.role?.toUpperCase()}
-        </Text>
-        <Text textStyle='h3' color='white'>
-          {crewMember?.name?.toUpperCase()}
-        </Text>
-        <Text
-          p={6}
-          pl={8}
-          pr={8}
-          lineHeight='30px'
-          textAlign={'center'}
-          color='secondary'
+    <Box overflowX='hidden'>
+      <Background url={background} />
+      <Box display='flex column' alignItems='flex-end'>
+        <SectionTitle sectionNumber={'02'} title='MEET YOUR CREW' />
+        <Box
+          display='flex'
+          flexDirection={{ base: 'column', md: 'column-reverse' }}
         >
-          {crewMember?.bio}
-        </Text>
+          {crewMember && (
+            <Gallery
+              data={data}
+              handleSelect={handleSelect}
+              currentImage={crewMember?.images?.png}
+              style={'buttonGallery'}
+            />
+          )}
+          <Box
+            width='100vw'
+            display='flex'
+            flexDirection='column'
+            justifyContent={'flex-end'}
+            alignItems={'center'}
+          >
+            <Text textStyle={'h4'} color='lightgray' opacity='80%'>
+              {crewMember?.role?.toUpperCase()}
+            </Text>
+            <Text textStyle='h3' color='white'>
+              {crewMember?.name?.toUpperCase()}
+            </Text>
+            <Description description={crewMember?.bio} textAlign='center' />
+          </Box>
+        </Box>
+        {displayEnd && <Box h='10vh' />}
       </Box>
-      <Box h='10vh' />
-    </>
+    </Box>
   );
 };
 

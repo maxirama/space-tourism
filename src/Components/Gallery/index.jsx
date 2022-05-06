@@ -55,23 +55,38 @@ const Gallery = ({ style, data, handleSelect, currentImage }) => {
   }
   if (style === 'buttonGallery') {
     return (
-      <>
-        <Box p={8} width='100%' display='flex' justifyContent={'center'}>
+      <Box
+        display='flex'
+        flexDirection={{ base: 'column', md: 'column-reverse' }}
+      >
+        <Box
+          p={8}
+          pb={{ base: 8, md: 0 }}
+          width='100%'
+          display='flex'
+          justifyContent={'center'}
+        >
           <Box
-            width='100%'
-            borderBottom={'solid 1px rgba(192, 192, 192, .3)'}
+            width='100vw'
+            borderBottom={{
+              base: 'solid 1px rgba(192, 192, 192, .3)',
+              md: 'none'
+            }}
             display='flex'
             justifyContent='center'
           >
-            {currentImage && <SectionImage url={currentImage} type='crew' />}
+            {currentImage && (
+              <SectionImage url={currentImage} w h type='crew' />
+            )}
           </Box>
         </Box>
         <Box
           display='inline-flex'
           width='100%'
           height='5vh'
-          justifyContent={'center'}
+          justifyContent={{ base: 'center' }}
           gap={5}
+          alignSelf='flex-start'
         >
           {data?.map((currentData, index) => {
             console.log(currentData);
@@ -87,7 +102,7 @@ const Gallery = ({ style, data, handleSelect, currentImage }) => {
             );
           })}
         </Box>
-      </>
+      </Box>
     );
   }
 };

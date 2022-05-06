@@ -36,22 +36,21 @@ export const Home = () => {
       >
         <SectionTitle
           textStyle='h5'
-          fontSize={'22px'}
+          fontSize={'24px'}
           title='SO, YOU WANT TO TRAVEL TO'
           color='secondary'
+          home={true}
         />
 
         <Box textStyle='h1' color='white'>
           SPACE
         </Box>
-        <Box w={{ base: '327px', md: '450px' }} color='secondary'>
-          <Description
-            fontWeight='light'
-            textAlign={'center'}
-            lineHeight={'30px'}
-            description={homeDescription}
-          />
-        </Box>
+        <Description
+          textAlign={'center'}
+          lineHeight={'25px'}
+          description={homeDescription}
+        />
+
         <Box height='100%' display='flex' flexDirection={'column-reverse'}>
           <Box
             justifySelf={'flex-end'}

@@ -11,7 +11,7 @@ const DestinationData = ({
   return (
     <>
       <Box display='flex' w='100vw' justifyContent={'center'}>
-        <Text color='terciary' pt={3} textStyle={'h2'}>
+        <Text color='terciary' pt={3} textStyle={'h2'} fontSize='92px'>
           {planetName}
         </Text>
       </Box>
@@ -23,7 +23,6 @@ const DestinationData = ({
           pb={5}
         >
           <Description textAlign={'center'} description={planetDescription} />
-
         </Box>
       </Box>
       <Box

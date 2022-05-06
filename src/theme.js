@@ -32,7 +32,7 @@ export const theme = {
       fontFamily: 'Barlow Condensed'
     },
     subHeading2: {
-      fontSize: ['16px'],
+      fontSize: ['17px', '19px'],
       fontFamily: 'Barlow Condensed',
       letterSpacing: '2.35px'
     },

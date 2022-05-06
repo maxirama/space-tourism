@@ -30,8 +30,8 @@ const Menu = ({ isOpen }) => {
             justifyContent={'center'}
             alignItems={{ base: 'initial', md: 'center' }}
             pb={{ base: 0, md: 5 }}
-            p={6}
-            pt={20}
+            p={5}
+            pt={{ base: 20, md: 0 }}
           >
             {sections.map((section, index) => {
               return (
