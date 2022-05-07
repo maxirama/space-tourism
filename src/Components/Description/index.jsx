@@ -6,7 +6,7 @@ const Description = ({ description, fontWeight, textAlign, lineHeight }) => {
     <Text
       fontWeight={fontWeight || 'light'}
       textAlign={textAlign || 'center'}
-      lineHeight={lineHeight || '25px'}
+      lineHeight={lineHeight || '30px'}
       fontSize={{ base: '16px', md: '18px' }}
       color='secondary'
       p={4}

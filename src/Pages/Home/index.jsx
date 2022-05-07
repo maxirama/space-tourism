@@ -45,11 +45,9 @@ export const Home = () => {
         <Box textStyle='h1' color='white'>
           SPACE
         </Box>
-        <Description
-          textAlign={'center'}
-          lineHeight={'25px'}
-          description={homeDescription}
-        />
+        <Box w={{ base: 'inherit', md: '70%' }}>
+          <Description textAlign={'center'} description={homeDescription} />
+        </Box>
 
         <Box height='100%' display='flex' flexDirection={'column-reverse'}>
           <Box

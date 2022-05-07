@@ -17,13 +17,11 @@ const Gallery = ({ style, data, handleSelect, currentImage }) => {
         <Box
           pt={6}
           height='auto'
-          width='100vw'
+          width='100%'
           display='flex'
           justifyContent={'center'}
         >
-          <Box width='100vw' display='flex' justifyContent='center'>
-            {currentImage && <SectionImage url={currentImage} type='full' />}
-          </Box>
+          {currentImage && <SectionImage url={currentImage} type='full' />}
         </Box>
         <Box
           display='inline-flex'

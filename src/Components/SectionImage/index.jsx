@@ -7,18 +7,20 @@ const SectionImage = ({ url, type }) => {
   }
   if (type === 'crew') {
     return (
-      <Image
-        w={{ base: '250px', md: '55vw' }}
-        h={{ base: '320px', md: '60vw' }}
-        position={{ base: 'inherit' }}
-        bottom={{ base: null, md: '0px' }}
-        src={url}
-        mt={{ base: null, md: 20 }}
-      />
+      <Box>
+        <Image
+          // w={{ base: '250px', md: '100%' }}
+          // h={{ base: '320px', md: 'inherit' }}
+          position={{ base: 'inherit' }}
+          bottom={{ base: null, md: '0px' }}
+          src={url}
+          mt={{ base: null, md: 20 }}
+        />
+      </Box>
     );
   }
   if (type === 'full') {
-    return <Image src={url} w='100vw' h='50vw' />;
+    return <Image objectFit={'contain'} src={url} />;
   }
 };
 

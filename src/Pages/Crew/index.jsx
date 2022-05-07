@@ -77,7 +77,9 @@ const Crew = () => {
             <Text textStyle='h3' color='white'>
               {crewMember?.name?.toUpperCase()}
             </Text>
-            <Description description={crewMember?.bio} textAlign='center' />
+            <Box w='80%'>
+              <Description description={crewMember?.bio} textAlign='center' />
+            </Box>
           </Box>
         </Box>
         {displayEnd && <Box h='10vh' />}
