@@ -1,7 +1,15 @@
 import React from 'react';
 import { Text, Box } from '@chakra-ui/react';
 
-const SectionTitle = ({ sectionNumber, title, color, fontSize, pt, home }) => {
+const SectionTitle = ({
+  sectionNumber,
+  title,
+  color,
+  fontSize,
+  pt,
+  home,
+  pb
+}) => {
   return (
     <>
       <Box
@@ -13,6 +21,7 @@ const SectionTitle = ({ sectionNumber, title, color, fontSize, pt, home }) => {
         ml={{ base: 'none', md: home ? 0 : 10 }}
         mt={{ base: 10, md: home ? 0 : 20 }}
         pt={pt || null}
+        pb={pb || null}
         gap={2}
       >
         <Text

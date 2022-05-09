@@ -20,7 +20,7 @@ const SectionImage = ({ url, type }) => {
     );
   }
   if (type === 'full') {
-    return <Image objectFit={'contain'} src={url} />;
+    return <Image W='100%' src={url} />;
   }
 };
 

@@ -35,9 +35,13 @@ const Technology = () => {
   });
 
   return (
-    <>
+    <Box overflowX={'hidden'}>
       <Background url={background} />
-      <SectionTitle sectionNumber={'03'} title='SPACE LAUNCH 101' pt={10} />
+      <SectionTitle
+        sectionNumber={'03'}
+        title='SPACE LAUNCH 101'
+        pt={{ base: 10, md: 20 }}
+      />
       {data && (
         <>
           <Gallery
@@ -72,7 +76,7 @@ const Technology = () => {
         </>
       )}
       <End />
-    </>
+    </Box>
   );
 };
 

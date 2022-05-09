@@ -12,8 +12,8 @@ const GalleryButton = ({
   if (type === 'circle') {
     return (
       <Box
-        width={'12px'}
-        h={'12px'}
+        width={{ base: '12px', md: '20px' }}
+        h={{ base: '12px', md: '20px' }}
         background={background}
         borderRadius={'50%'}
         onClick={handleSelect}
@@ -27,9 +27,9 @@ const GalleryButton = ({
     return (
       <Box
         display='flex'
-        width={'60px'}
+        width={{ base: '60px', md: '80px' }}
         justifyContent='center'
-        h={'60px'}
+        h={{ base: '60px', md: '80px' }}
         background={background}
         borderRadius={'50%'}
         onClick={handleSelect}

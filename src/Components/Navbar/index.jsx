@@ -10,6 +10,7 @@ const Navbar = () => {
   };
 
   const hamburgerMenu = useBreakpointValue({ base: true, md: false });
+
   return (
     <Box w='100vw'>
       <Menu isOpen={isOpen} handleClick={handleMenuClick} />

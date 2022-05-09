@@ -51,7 +51,12 @@ const Crew = () => {
     <Box overflowX='hidden'>
       <Background url={background} />
       <Box display='flex column' alignItems='flex-end'>
-        <SectionTitle sectionNumber={'02'} title='MEET YOUR CREW' />
+        <SectionTitle
+          sectionNumber={'02'}
+          title='MEET YOUR CREW'
+          pt={{ base: 10, md: 20 }}
+          pb={{ base: 5, md: 10 }}
+        />
         <Box
           display='flex'
           flexDirection={{ base: 'column', md: 'column-reverse' }}

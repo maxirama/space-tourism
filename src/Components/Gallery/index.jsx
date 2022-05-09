@@ -73,15 +73,14 @@ const Gallery = ({ style, data, handleSelect, currentImage }) => {
             display='flex'
             justifyContent='center'
           >
-            {currentImage && (
-              <SectionImage url={currentImage} w h type='crew' />
-            )}
+            {currentImage && <SectionImage url={currentImage} type='crew' />}
           </Box>
         </Box>
         <Box
           display='inline-flex'
           width='100%'
-          height='5vh'
+          pt={{ base: null, md: 5 }}
+          height={{ base: '5vh', md: null }}
           justifyContent={{ base: 'center' }}
           gap={5}
           alignSelf='flex-start'
