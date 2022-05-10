@@ -2,13 +2,17 @@ import react from 'react';
 import { Text, Box, Button, useBreakpointValue } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-const NavItem = ({ section, number, mobile }) => {
+const NavItem = ({ section, number, mobile, handleMenuClick }) => {
   let path = section === 'HOME' ? '/' : `/${section.toLowerCase()}`;
 
   const showNumber = useBreakpointValue({
     base: true,
     md: false
   });
+
+  const handleClick = (e) => {
+    console.log('probando');
+  };
 
   if (true) {
     return (
@@ -18,6 +22,7 @@ const NavItem = ({ section, number, mobile }) => {
           flexDirection={'row'}
           width='100%'
           pt={{ base: 10, md: 5 }}
+          onClick={handleClick}
         >
           <Button
             justifyContent={'start'}
@@ -27,6 +32,7 @@ const NavItem = ({ section, number, mobile }) => {
             _focus={'none'}
             _active={'none'}
             borderRadius={'0px'}
+            onClick={handleMenuClick}
           >
             {showNumber && (
               <Text pr={2} color='terciary' textStyle={'navItem'}>

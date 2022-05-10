@@ -1,11 +1,21 @@
-import React from 'react';
-import { Box, useBreakpointValue } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Box, useBreakpointValue, Button, Image } from '@chakra-ui/react';
 import NavItem from '../NavItem';
+import MenuButton from './MenuButton';
 
 const sections = ['HOME', 'DESTINATION', 'CREW', 'TECHNOLOGY'];
 
-const Menu = ({ isOpen }) => {
+const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuClick = (e) => {
+    console.log('sanityCheck');
+    setIsOpen(!isOpen);
+  };
+
   const showMenu = useBreakpointValue({ base: isOpen, md: true });
+  const mobileMenu = useBreakpointValue({ base: true, md: false });
+
   return showMenu ? (
     <>
       <Box
@@ -24,6 +34,9 @@ const Menu = ({ isOpen }) => {
           h='100%'
           width='60%'
         >
+          {mobileMenu && (
+            <MenuButton handleMenuClick={handleMenuClick} isOpen={isOpen} />
+          )}
           <Box
             display={{ base: 'initial', md: 'inline-flex' }}
             margin={{ base: 'initial' }}
@@ -35,14 +48,22 @@ const Menu = ({ isOpen }) => {
           >
             {sections.map((section, index) => {
               return (
-                <NavItem w='auto' h='100%' section={section} number={index} />
+                <NavItem
+                  w='auto'
+                  h='100%'
+                  section={section}
+                  number={index}
+                  handleMenuClick={handleMenuClick}
+                />
               );
             })}
           </Box>
         </Box>
       </Box>
     </>
-  ) : null;
+  ) : (
+    <MenuButton handleMenuClick={handleMenuClick} />
+  );
 };
 
 export default Menu;
