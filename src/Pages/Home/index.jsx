@@ -1,15 +1,18 @@
 import React from 'react';
-import { Box, Text, useBreakpointValue, Center } from '@chakra-ui/react';
+import { Box, Text, useBreakpointValue } from '@chakra-ui/react';
 import Background from '../../Components/Background';
 import SectionTitle from '../../Components/SectionTitle';
 import Description from '../../Components/Description';
+import BackgroundDesktop from '../../assets/home/background-home-desktop.jpg';
+import BackgroundTablet from '../../assets/home/background-home-tablet.jpg';
+import BackgroundMobile from '../../assets/home/background-home-mobile.jpg';
 import data from '../../../data.json';
 
 export const Home = () => {
   const background = {
-    mobile: 'src/assets/Images/Home/mobile.jpg',
-    tablet: 'src/assets/Images/Home/background-home-tablet.jpg',
-    desktop: 'src/assets/Images/Home/background-home-desktop.jpg'
+    mobile: BackgroundMobile,
+    tablet: BackgroundTablet,
+    desktop: BackgroundDesktop
   };
 
   const homeDescription = `Let's face it; if you want to go to space, you might as well

@@ -7,6 +7,9 @@ import SectionImage from '../../Components/SectionImage';
 import SectionTitle from '../../Components/SectionTitle';
 import data from '../../../data.json';
 import End from '../../Components/End';
+import BackgroundMobile from '../../assets/destination/background-destination-mobile.jpg';
+import BackgroundTablet from '../../assets/destination/background-destination-tablet.jpg';
+import BackgroundDesktop from '../../assets/destination/background-destination-desktop.jpg';
 
 function getDestinations() {
   return Promise.resolve([...data.destinations]);
@@ -24,9 +27,9 @@ const Destination = () => {
   }, []);
 
   const background = {
-    desktop: 'src/assets/destination/background-destination-desktop.jpg',
-    tablet: 'src/assets/destination/background-destination-tablet.jpg',
-    mobile: 'src/assets/destination/background-destination-mobile.jpg'
+    mobile: BackgroundMobile,
+    tablet: BackgroundTablet,
+    desktop: BackgroundDesktop
   };
 
   const _background = useBreakpointValue({

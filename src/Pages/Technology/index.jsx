@@ -5,6 +5,9 @@ import getData from '../../Services';
 import SectionTitle from '../../Components/SectionTitle';
 import Gallery from '../../Components/Gallery';
 import End from '../../Components/End';
+import BackgroundMobile from '../../assets/technology/background-technology-mobile.jpg';
+import BackgroundTablet from '../../assets/technology/background-technology-tablet.jpg';
+import BackgroundDesktop from '../../assets/technology/background-technology-desktop.jpg';
 
 const Technology = () => {
   const [data, setData] = useState([]);
@@ -23,9 +26,9 @@ const Technology = () => {
   }, []);
 
   const _background = {
-    mobile: 'src/assets/technology/background-technology-mobile.jpg',
-    tablet: 'src/assets/technology/background-technology-tablet.jpg',
-    desktop: 'src/assets/technology/background-technology-desktop.jpg'
+    mobile: BackgroundMobile,
+    tablet: BackgroundTablet,
+    desktop: BackgroundDesktop
   };
 
   const background = useBreakpointValue({

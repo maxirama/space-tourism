@@ -86,7 +86,6 @@ const Gallery = ({ style, data, handleSelect, currentImage }) => {
           alignSelf='flex-start'
         >
           {data?.map((currentData, index) => {
-            console.log(currentData);
             return (
               <GalleryButton
                 background={selected === index ? 'white' : 'gray'}

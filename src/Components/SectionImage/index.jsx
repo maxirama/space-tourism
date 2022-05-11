@@ -9,8 +9,6 @@ const SectionImage = ({ url, type }) => {
     return (
       <Box>
         <Image
-          // w={{ base: '250px', md: '100%' }}
-          // h={{ base: '320px', md: 'inherit' }}
           position={{ base: 'inherit' }}
           bottom={{ base: null, md: '0px' }}
           src={url}

@@ -7,10 +7,11 @@ const sections = ['HOME', 'DESTINATION', 'CREW', 'TECHNOLOGY'];
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState(0);
 
   const handleMenuClick = (e) => {
-    console.log('sanityCheck');
     setIsOpen(!isOpen);
+    setCurrentSection(parseInt(e.target.attributes.value.value));
   };
 
   const showMenu = useBreakpointValue({ base: isOpen, md: true });
@@ -48,13 +49,16 @@ const Menu = () => {
           >
             {sections.map((section, index) => {
               return (
-                <NavItem
-                  w='auto'
-                  h='100%'
-                  section={section}
-                  number={index}
-                  handleMenuClick={handleMenuClick}
-                />
+                <Box>
+                  <NavItem
+                    w='auto'
+                    h='100%'
+                    section={section}
+                    number={index}
+                    handleMenuClick={handleMenuClick}
+                    currentSection={currentSection}
+                  />
+                </Box>
               );
             })}
           </Box>
